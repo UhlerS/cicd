@@ -37,7 +37,7 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
+          username: "uhlers"
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build the docker Docker image / test run it / publish the image
         run: |
