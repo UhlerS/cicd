@@ -3,19 +3,18 @@ Test the main module.
 Author: Wolf Paulus (wolf@paulus.com)
 """
 from unittest import TestCase
-from main import is_odd, is_odd_str
+from main import is_div3, is_div3_str
 
 
 class Test(TestCase):
-    def test_is_odd(self):
-        assert not is_odd(0)
-        assert is_odd(1)
-        assert not is_odd(2)
+    def test_is_div3(self):
+        assert not is_div3(5)
+        assert is_div3(6)
+        assert not is_div3(635)
+        assert is_div3(963)
 
-    def test_is_odd_str(self):
-        assert is_odd_str("0") == "0 is even."
-        assert is_odd_str("1") == "1 is odd."
-        assert is_odd_str("2") == "2 is even."
-        assert is_odd_str("-1") == "Please enter a number."
-        assert is_odd_str("A") == "Please enter a number."
-        assert is_odd_str("") == "Please enter a number."
+    def test_is_div3_str(self):
+        assert is_div3_str("5") == "5 is not divisible by 3."
+        assert is_div3_str("6") == "6 is divisible by 3."
+        assert is_div3_str("635") == "635 is not divisible by 3."
+        assert is_div3_str("963") == "963 is divisible by 3."
